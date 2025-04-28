@@ -1,3 +1,4 @@
+import customtkinter
 from enum import Enum
 
 
@@ -22,3 +23,33 @@ class GuiUtils:
         window.geometry(f"{width}x{height}+{x}+{y}")
 
 
+    class Elements:
+        def __init__(self, frame, root, start, stop, modes):
+            self.program_title = customtkinter.CTkLabel(frame, text = 'keymerchant 0.4a',
+                text_color = '#E8E8E8', justify = 'left', padx = 0, pady = 0, font = ('Nacelle Light', 20))
+
+            self.start_button = customtkinter.CTkButton(frame, text = 'start logging',
+                command = start, width = 105, fg_color = '#139900', hover_color = '#0C6500',
+                text_color_disabled = '#9E9E9E', font = ('Nacelle Regular', 14), border_spacing = 0)
+
+            self.stop_button = customtkinter.CTkButton(frame, text = 'stop logging', command = stop,
+                width = 105, fg_color = '#E72424', hover_color = '#A01111', text_color_disabled = '#9E9E9E',
+                state = 'disabled', font = ('Nacelle Regular', 14))
+
+            self.logging_mode_label = customtkinter.CTkLabel(frame, text = 'Logging Mode:', text_color = '#E8E8E8',
+                justify = 'center', padx = 0, pady = 0, font = ('Nacelle Regular', 13))
+
+            self.logging_mode_box = customtkinter.CTkComboBox(frame, values = modes, state = 'readonly',
+                width = 100, font = ('Nacelle Light', 14), dropdown_font = ('Nacelle Light', 12), justify = 'right')
+
+            self.hidden_mode_checkbox = customtkinter.CTkCheckBox(frame, text = 'hidden mode', onvalue = 'on',
+                offvalue = 'off', width = 100, text_color = '#E8E8E8', font = ('Nacelle Light', 15))
+
+            self.quiet_mode_checkbox = customtkinter.CTkCheckBox(frame, text='quiet mode', onvalue='on',
+                offvalue='off', width=100, text_color='#E8E8E8', font = ('Nacelle Light', 15))
+
+            self.context_logging_checkbox = customtkinter.CTkCheckBox(frame, text = 'context logging', onvalue = 'on',
+                offvalue = 'off', width = 100, text_color = '#E8E8E8', font = ('Nacelle Light', 15))
+
+            self.quote_label = customtkinter.CTkLabel(root, text = 'mystify, mislead, surprise', text_color = '#B8B8B8',
+                justify = 'center', padx = 0, pady = 0, font = ('Nacelle Medium', 10, 'italic'))
