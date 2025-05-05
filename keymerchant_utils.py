@@ -1,13 +1,25 @@
-import customtkinter
-import tkinter
+import customtkinter, tkinter, os, sys
 from enum import Enum
 
 
+
 class Logic:
+    def __init__(self):
+        pass
+
     class LoggingModes(Enum):
         OFF = 0
         TXT = 1
         JSON = 2
+
+
+    class PrintStates(Enum):
+        OFF = 0
+        ON = 1
+
+
+    def print_handler(self, target_state):
+        sys.stdout = sys.__stdout__ if target_state == self.PrintStates.ON else open(os.devnull, 'w')
 
 
 
@@ -24,7 +36,7 @@ class GuiUtils:
 
 
     class Elements:
-        def __init__(self, frame, root, start, stop, modes, checkbox):
+        def __init__(self, frame, root, start, stop, modes, checkbox, dir_prompt):
             self.program_title = customtkinter.CTkLabel(frame, text = 'keymerchant 0.5a',
                 text_color = '#E8E8E8', justify = 'left', padx = 0, pady = 0, font = ('Nacelle Light', 20))
 
@@ -36,7 +48,7 @@ class GuiUtils:
                 width = 105, fg_color = '#E72424', hover_color = '#A01111', text_color_disabled = '#9E9E9E',
                 state = 'disabled', font = ('Nacelle Regular', 14))
 
-            self.logging_mode_label = customtkinter.CTkLabel(frame, text = 'Logging Mode:', text_color = '#E8E8E8',
+            self.logging_mode_label = customtkinter.CTkLabel(frame, text = 'logging mode:', text_color = '#E8E8E8',
                 justify = 'center', padx = 0, pady = 0, font = ('Nacelle Regular', 13))
 
             self.logging_mode_box = customtkinter.CTkComboBox(frame, values = modes, state = 'readonly',
@@ -53,6 +65,9 @@ class GuiUtils:
 
             self.quote_label = customtkinter.CTkLabel(root, text = 'mystify, mislead, surprise', text_color = '#B8B8B8',
                 justify = 'center', padx = 0, pady = 0, font = ('Nacelle Medium', 10, 'italic'))
+
+            self.output_directory_button = customtkinter.CTkButton(frame, text = 'select output directory', command = dir_prompt,
+                width = 150, fg_color = '#174EDD', hover_color = '#1038A0', state = 'normal', font = ('Nacelle Regular', 14))
 
 
 
