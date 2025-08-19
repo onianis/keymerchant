@@ -1,4 +1,4 @@
-<p align="center"><picture><img src="/assets/logos/lavender_64x64.png" style="width: 10px; height: 10px;"></picture></p>
+<p align="center"><picture><img src="/assets/logos/lavender_64x64.png" style="width: 60px; height: 60px;"></picture></p>
 
 # keymerchant - The Python Keylogger
 
@@ -8,6 +8,44 @@
 The project focuses and will focus on implementing features that mirror real-world surveillance software. This realistic approach ensures that security professionals can study and defend against actual threat patterns rather than sanitized academic examples.
 
 Future development will continue expanding the feature set to maintain research relevance, including enhanced operational security measures, improved cross-platform compatibility, and advanced persistence mechanisms - all designed to provide comprehensive learning opportunities for authorized security research and defensive strategy development.
+
+---
+
+## Current Features
+- [X] Basic keystroke capture
+- [X] Global keystroke capture (context-ignorant)
+- [X] Logging to a file (JSON, TXT)
+- [X] Full timestamping
+- [X] Quiet Mode (no console output)
+- [X] Hidden Mode (minimizes upon logging start)
+- [X] Sleek GUI (customTkInter)
+- [X] Cross-platform (Windows, Linux, (_no. no macOS._))
+- [X] Context logging (focused window)
+
+---
+
+## Planned Features
+- Exfiltration
+    - [ ] Server-based exfiltration (POST request?)
+    - [ ] SMTP-based exflitration
+- Covertness
+    - [ ] Heuristic detection evasion
+    - [ ] Variable name obfuscation
+    - [ ] Full compilation
+    - [ ] Monolithic, click-and-log structure
+- [ ] Headless Mode + CLI Mode
+- [ ] PID Hopping / spoofing
+- [ ] Custom process name masking / emulation
+- [ ] Fully custom keystroke capture implementation (probably in C/C++?. Very far into the future)
+
+---
+
+## Known Limitations
+- LINUX: Requires _sudo_
+- LINUX: No context logging
+- Highly detectable via heuristics
+- Common, predictable TTPs
+- Just overall sucks right now
 
 ---
 
