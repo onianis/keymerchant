@@ -75,4 +75,4 @@ By downloading, using, or distributing this software or derivatives thereof, you
 - I explicitly disclaim all liability for damages arising from use of this software
 
 ### Licensing
-This project is governed by the terms specified in the LICENSE file. Use of **keymerchant** constitutes acceptance of these temrs and the entirety of this disclaimer.
+This project is governed by the terms specified in the LICENSE file. Use of **keymerchant** constitutes acceptance of these terms and the entirety of this disclaimer.
